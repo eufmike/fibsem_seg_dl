@@ -217,13 +217,14 @@ def vanilla_unet(
     num_layers = 4,
     num_classes = 1,
     filters = 64,
-    output_activation = 'sigmoid',
+    output_activation = 'sigmoid', # 'sigmoid' or 'softmax'
     loss = "binary_crossentropy", 
     lr = 1e-5, 
     metrics = ['accuracy'], 
     summary = True,
     use_batch_norm = False,
-    ): # 'sigmoid' or 'softmax'
+    ): 
+    
     
     # Build U-Net model
     inputs = Input((shape[0], shape[1], num_classes))
@@ -271,13 +272,13 @@ def vanilla_unet_nodrop(
     num_layers = 4,
     num_classes = 1,
     filters = 64,
-    output_activation = 'sigmoid',
+    output_activation = 'sigmoid', # 'sigmoid' or 'softmax'
     loss = "binary_crossentropy", 
     lr = 1e-5, 
     metrics = ['accuracy'], 
     summary = True,
     use_batch_norm = False,
-    ): # 'sigmoid' or 'softmax'
+    ): 
     
     # Build U-Net model
     inputs = Input((shape[0], shape[1], num_classes))
