@@ -131,19 +131,25 @@ def random_crop_batch(ipimglist,
     
     id_count = 1
     
+    if not len(imglist) == len(labellist):
+        print(len(imglist))
+        print(len(labellist))
+    
     # iterate through each files
     for idx in trange(len(imglist)): 
+        ip_img_filename = imglist[idx] 
+        ip_label_filename = labellist[idx]  
+      
         # load the raw images
-        img_tmp = imread(imglist[idx], as_gray=True)
+        img_tmp = imread(ip_img_filename, as_gray=True)
         
         # load the labeled images
-        label_tmp = imread(labellist[idx], as_gray=True)
+        label_tmp = imread(ip_label_filename, as_gray=True)
         # plt.imshow(label_tmp)
         
         # Incase there are labels bigger than 1
         label_tmp_array = label_tmp > 0 
 
-        
         if crop_outside: 
             label_tmp_array, img_tmp_array = crop_image_only_outside(label_tmp_array, img_tmp)
         else: 
