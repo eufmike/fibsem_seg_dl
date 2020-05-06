@@ -3,6 +3,10 @@ This repository hosts code for performing deep-learning based segmentation in th
 
 This new repository is prepared for WU RIS HPC. <br/>
 
+## Methods
+* Convolutional Neural Network
+* U-Net
+
 ## Data
 * Data: Generated from Zeiss Crossbeam 540 FIB-SEM
     * 3D dataset
