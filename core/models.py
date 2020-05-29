@@ -319,3 +319,32 @@ def vanilla_unet_nodrop(
         model.summary()
     
     return model
+
+
+# -----
+
+import segmentation_models as sm
+from segmentation_models.losses import bce_jaccard_loss
+from segmentation_models.metrics import iou_score
+
+def sm_unet(
+    shape,
+    num_classes = 1,
+    filters = 64,
+    output_activation = 'sigmoid', # 'sigmoid' or 'softmax'
+    loss = "binary_crossentropy", 
+    lr = 1e-5, 
+    metrics = ['accuracy'], 
+    summary = True,
+    use_batch_norm = False,
+    ):
+    
+    model = sm.Unet('resnet3 4', input_shape=shape, encoder_weights=None, 
+                    classes=num_classes, activation = 'sigmoid')
+    
+    # compile model
+    model.compile(loss=loss, optimizer = Adam(lr = lr) , metrics=['accuracy', iou_score])
+    
+    return model
+    
+    

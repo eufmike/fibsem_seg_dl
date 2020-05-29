@@ -4,6 +4,7 @@ from skimage.io import imread, imsave, imshow
 from PIL import Image, ImageTk
 from tqdm.notebook import trange
 from core.imageprep import create_crop_idx, crop_to_patch, construct_from_patch, create_crop_idx_whole
+import time
 
 import matplotlib.pyplot as plt
 
@@ -79,24 +80,39 @@ def stack_predict_v2(input_imgpath,
             img_tmp = img_tmp * rescale 
             
         # predict main region
+        
+        
         img_tmp_crop = img_tmp[:img_tmp.shape[0]//size_factor * size_factor, :img_tmp.shape[1]//size_factor * size_factor]
         img_tmp_crop = img_tmp_crop.reshape(1, img_tmp_crop.shape[0], img_tmp_crop.shape[1], 1)
+        
+        start = time.time()
         img_tmp_crop_predict_main = model.predict(img_tmp_crop, batch_size = 16)
+        end = time.time()
+        print('time for main: {}'.format(end-start))
+        
         img_tmp_crop_predict_main = img_tmp_crop_predict_main.reshape(img_tmp_crop_predict_main.shape[1],
                                                             img_tmp_crop_predict_main.shape[2])
         
+        print(img_tmp_crop_predict_main.shape)
+        
+        
         ## predict the edge
+        start = time.time()
         edge_patch = crop_to_patch(img_tmp, cropidx, (IMG_HEIGHT, IMG_WIDTH))
         edge_patch_re = np.reshape(edge_patch, (edge_patch.shape[0], 
                                                       edge_patch.shape[1], 
                                                       edge_patch.shape[2], 1))
         
+        start = time.time()
         edge_patch_re_predict = model.predict(edge_patch_re, batch_size = 16)
+        end = time.time()
+        print('time for edge: {}'.format(end-start))
+        print(edge_patch_re_predict.shape)
         
         img_tmp_crop_predict_edge = construct_from_patch(edge_patch_re_predict, 
                                          cropidx, 
                                          target_size = (img_height, img_width))
-                
+ 
         # average
         outputimg_stack = np.full((2, img_height, img_width), np.nan)
         outputimg_stack[0, :img_tmp_crop_predict_main.shape[0], :img_tmp_crop_predict_main.shape[1]] = img_tmp_crop_predict_main
