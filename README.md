@@ -23,19 +23,19 @@ This new repository is prepared for WU RIS HPC. <br/>
 
 * Sample 
     1. Day 0
-        * data_d00_batch01_loc01 (TH-4891-0dayDOX-B-M3)
-        * data_d00_batch02_loc02 (TH-4891 0day DOX D-K8)
-        * data_d00_batch02_loc03 (TH-4891 0day DOX D A12)
+        * `data_d00_batch01_loc01 (TH-4891-0dayDOX-B-M3)`
+        * `data_d00_batch02_loc02 (TH-4891 0day DOX D-K8)`
+        * `data_d00_batch02_loc03 (TH-4891 0day DOX D A12)`
     2. Day 7 
-        * data_d07_batch01_loc01 (TH-4891-7dayDOX)
-        * data_d07_batch02_loc01 (TH-4891 7day DOX B-L8)
-        * data_d07_batch02_loc02 (TH-4891 7day DOX C-R19)
+        * `data_d07_batch01_loc01 (TH-4891-7dayDOX)`
+        * `data_d07_batch02_loc01 (TH-4891 7day DOX B-L8)`
+        * `data_d07_batch02_loc02 (TH-4891 7day DOX C-R19)`
     3. Day 14
-        * data_d14_batch01_loc01 (TH-4891-14dayDOX-C-H16)
+        * `data_d14_batch01_loc01 (TH-4891-14dayDOX-C-H16)`
     4. Day 17
-        * data_d17_batch01_loc01 (TH-4891-17dayDOX)
+        * `data_d17_batch01_loc01 (TH-4891-17dayDOX)`
     5. Day 21
-        * data_d21_batch01_loc01 (TH-4891-21dayDOX)
+        * `data_d21_batch01_loc01 (TH-4891-21dayDOX)`
     
 ### Directory
 * Data Location: Workstation-008
@@ -57,18 +57,18 @@ This new repository is prepared for WU RIS HPC. <br/>
             * `data_d**_batch**_loc**_mito`: label analysis on mito and cristae
             * `data_d**_batch**_loc**_skeleton`: skeleton (branching) analysis on mitochondira
         * `.hxtemplate`: template files used for analysis 
-    2. `data`: data  
-            * `raw`: raw analysis exported from Amira
-                * label analysis
-                    * `cell_membrane`
-                    * `nucleus`
-                    * `mito`
-                    * `cristae`
-                    * `ER`
-                    * `inclusion`
-                * skeleton/branching analysis
-                    * `skeleton`: .xml files; includes node, points and segments
-                    * `skeleton_ouput`: .csv files; includes node, points, segments and segments_s
+    2. `data`: data
+        * `raw`: raw analysis exported from Amira
+            * label analysis
+                * `cell_membrane`
+                * `nucleus`
+                * `mito`
+                * `cristae`
+                * `ER`
+                * `inclusion`
+            * skeleton/branching analysis
+                * `skeleton`: .xml files; includes node, points and segments
+                * `skeleton_ouput`: .csv files; includes node, points, segments and segments_s
             * `compile`: complied data in single spreadsheet
                 * label analysis: `Volume3d`, `Area3d`, `BaryCenterX`, `BaryCenterY`, `BaryCenterZ`, `index`, `filename`, `day`
                     * `cell_membrane`: 
