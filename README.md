@@ -71,18 +71,13 @@ This new repository is prepared for WU RIS HPC. <br/>
                 * `skeleton_ouput`: .csv files; includes node, points, segments and segments_s
             * `compile`: complied data in single spreadsheet
                 * label analysis: `Volume3d`, `Area3d`, `BaryCenterX`, `BaryCenterY`, `BaryCenterZ`, `index`, `filename`, `day`
-                    * `cell_membrane`: 
-                    * `nucleus`: 
-                    * `nucleolus`: 
-                    * `lipid_droplet`: 
-                    * `mito`: 
-                    * `cristae`: 
-                    * `ER`: 
-                    * `inclusion`: 
-
-    
-    
-    3. `input`
+                * skeleton/branching analysis: 
+                    * `nodes.csv`: `Node ID`, `X Coord`, `Y Coord`, `Z Coord`, `Coordination Number`, `filename`, `day` 
+                    * `points.csv`: `Point ID`, `thickness`, `X Coord`, `Y Coord`, `Z Coord`, `filename`, `day`  
+                    * `segments_s`: `Segment ID`, `Node ID #1`, `Node ID #2`, `Point IDs`, `length`, `thickness`, `filename`, `day`
+                    * please visit Amira User's Guid for more information. 
+                    
+    3. `input`: all segmentation folders prepare for one single 
     4. `output_AND`
     5. `surface`
     
