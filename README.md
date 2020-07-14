@@ -109,8 +109,8 @@ This new repository is prepared for WU RIS HPC. <br/>
                     * please visit Amira User's Guid for more information. 
                     
     3. `input`: all segmentation images prepare for one label image 
-    4. `output`: merged label images
-    5. `output_AND`: 
+    4. `output_2`: merged label images
+    5. `output_AND`: label images inside cytoplasm
     6. `surface`: exported surface files in .stl
     7. `video`: 3D animation generated from Blender
 
