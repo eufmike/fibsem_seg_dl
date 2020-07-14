@@ -113,6 +113,8 @@ This new repository is prepared for WU RIS HPC. <br/>
     5. `output_AND`: label images inside cytoplasm
     6. `surface`: exported surface files in .stl
     7. `video`: 3D animation generated from Blender
+    8. `documents`
+        * `data_foldername - filename_with_label.csv`: coded filemame and origonal filname. 
 
     
 ## License
